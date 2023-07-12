@@ -9,10 +9,11 @@
 
     <div class="intro">{{ page.intro|richtext }}</div>
 
-    {% for post in page.get_children %}
+    {% for post in blogpages %}
         <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
-        {{ post.specific.intro }}
-        {{ post.specific.body|richtext }}
+        {{ post.specific.intro }}   
+        <p><a href="{% pageurl post %}">Read more...</a></p>
     {% endfor %}
+    
 
 {% endblock %}
